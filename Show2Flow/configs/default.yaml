@@ -1,0 +1,21 @@
+# Show2Flow default configuration.
+# Copy to configs/local.yaml and adjust as needed; local.yaml is gitignored.
+
+browser:
+  headless: true
+  default_timeout_ms: 15000
+
+healer:
+  prefer_embedding: true       # falls back to difflib automatically if
+                                # sentence-transformers isn't installed
+  min_confidence_embedding: 0.45
+  min_confidence_difflib: 0.35
+
+model_provider:
+  backend: null                 # null | "huggingface"
+  huggingface_model: "Qwen/Qwen2.5-0.5B-Instruct"
+
+paths:
+  workflows_dir: workflows
+  runs_dir: runs
+  recordings_dir: recordings

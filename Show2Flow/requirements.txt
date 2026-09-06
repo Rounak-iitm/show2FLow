@@ -1,0 +1,18 @@
+# --- Phase 1: core engine ---
+playwright>=1.45
+pydantic>=2.7
+PyYAML>=6.0
+pytest>=8.0
+
+# --- Phase 2: model backend (optional, add when you get there) ---
+# transformers>=4.42
+# torch>=2.3
+# sentence-transformers>=3.0   # enables the embedding-based healer backend
+
+# --- Phase 3: MCP + documents (optional) ---
+# mcp[cli]>=1.0
+# unstructured>=0.15
+# pypdf>=4.2
+
+# --- Phase 4: AI-controlled browsing (optional) ---
+# browser-use>=0.1

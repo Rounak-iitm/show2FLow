@@ -1,0 +1,19 @@
+name: click_demo
+description: >
+  Demonstrates self-healing: clicks a "Search Jobs" button. If the page's
+  button text has changed (e.g. to "Find Jobs"), the healer looks for the
+  closest semantic match among clickable elements and retries.
+steps:
+  - id: open_site
+    tool: browser
+    action: open
+    args:
+      url: "https://example.com"
+    target_description: "the site's homepage"
+
+  - id: click_search_button
+    tool: browser
+    action: click
+    args:
+      selector: "text=Search Jobs"
+    target_description: "the button that starts a job search"

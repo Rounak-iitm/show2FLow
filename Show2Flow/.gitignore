@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Virtual environments (kept outside the repo, e.g. C:\venvs\show2flow)
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+configs/local.yaml
+
+# Show2Flow run artifacts (generated, not source)
+runs/*.json
+runs/output/
+recordings/*
+experiments/*.csv
+experiments/*.json
+!recordings/.gitkeep
+!runs/.gitkeep
+!experiments/.gitkeep
+
+# Playwright
+playwright-report/
+test-results/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,46 @@
+name: search_jobs
+description: >
+  Open a website, search for AI jobs, extract the first 5 results, and save them.
+  This is Show2Flow's first demo workflow.
+steps:
+  - id: open_site
+    tool: browser
+    action: open
+    args:
+      url: "https://example.com"
+    target_description: "the site's homepage"
+
+  - id: fill_search
+    tool: browser
+    action: fill
+    args:
+      selector: "input[type=search], input[name=q], input[type=text]"
+      text: "AI jobs"
+    target_description: "the main search input box"
+
+  - id: submit_search
+    tool: browser
+    action: press
+    args:
+      selector: "input[type=search], input[name=q], input[type=text]"
+      key: "Enter"
+    target_description: "submit the search"
+
+  - id: extract_results
+    tool: browser
+    action: extract
+    args:
+      selector: "h2, h3, .result-title"
+      limit: 5
+    target_description: "the titles of the search result items"
+    expect:
+      type: list
+      min_items: 1
+
+  - id: save_results
+    tool: files
+    action: save_json
+    args:
+      path: "runs/output/jobs.json"
+      data: "$extract_results"
+    target_description: "persist the extracted results to disk"
