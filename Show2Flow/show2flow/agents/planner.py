@@ -1,12 +1,4 @@
-"""Planner: Intent -> Workflow.
 
-This is deliberately template-based rather than free-generation: each
-recognized intent action maps to a hand-written step template. That
-keeps runs reproducible and inspectable, which matters for the
-self-healing experiments (Phase 6) where you want to compare
-identical workflows against a changing page, not compare two
-differently-generated plans.
-"""
 from __future__ import annotations
 
 from show2flow.agents.intent import Intent
