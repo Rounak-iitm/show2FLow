@@ -1,17 +1,4 @@
-"""Executor: runs a Workflow step by step.
 
-Loop per step:
-  1. resolve `$step_id` references in args to that step's prior output
-  2. call tool.action(**args)
-  3. verify() the output against `expect`
-  4. on failure/timeout for a browser step, hand off to the healer,
-     retry once with the repaired selector
-  5. record a StepResult either way
-
-This is the "engine" — everything else (tools, agents) plugs into it
-through the ToolRegistry, so adding a new tool never requires touching
-this file.
-"""
 from __future__ import annotations
 
 import time
