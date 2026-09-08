@@ -1,10 +1,4 @@
-"""Workflow schema.
 
-A Workflow is a declarative list of Steps. Each Step names a tool
-("browser", "files", "documents") and an action on that tool, plus
-the arguments for that action and an optional target description used
-by the semantic healer if the literal selector/action fails.
-"""
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
