@@ -1,12 +1,4 @@
-"""Turns a natural-language task into a structured Intent.
 
-Phase 1/2 implementation is intentionally simple (regex/keyword based)
-so the rest of the pipeline (planner -> executor -> verifier -> healer)
-can be built and tested without a model dependency. Swap
-`parse()`'s body for a call to show2flow.models.provider.ModelProvider
-once you want LLM-driven parsing — the Intent schema stays the same,
-so nothing downstream has to change.
-"""
 from __future__ import annotations
 
 import re
