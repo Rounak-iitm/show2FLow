@@ -1,23 +1,4 @@
-"""Self-healing agent.
 
-When a browser step fails (selector not found / timeout), this module
-looks at every candidate interactive element currently on the page and
-finds the one whose visible text best matches the step's
-`target_description`, then returns a repaired selector for the
-executor to retry with.
-
-Two matching backends are supported, selected automatically:
-
-  1. Embedding similarity via sentence-transformers, if it's installed
-     (this is the "semantic matching" arm of the Phase 6 experiment —
-     see research question in README).
-  2. difflib.SequenceMatcher text similarity as a zero-dependency
-     fallback so the project runs before you `pip install
-     sentence-transformers`.
-
-Both backends expose the same `best_match()` signature so experiments
-can swap between them and log which one produced each repair.
-"""
 from __future__ import annotations
 
 import difflib
