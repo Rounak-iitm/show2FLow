@@ -1,10 +1,4 @@
-"""Exposes Show2Flow's tools and workflows over MCP (Model Context
-Protocol), using the official Python SDK, so other agents can call
-`show2flow.run_workflow`, `show2flow.browser.extract`, etc.
 
-Requires: pip install "mcp[cli]"
-Run with:  python -m show2flow.mcp.server
-"""
 from __future__ import annotations
 
 import json
