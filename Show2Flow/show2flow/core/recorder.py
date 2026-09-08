@@ -1,6 +1,4 @@
-"""Persistence layer. No database — workflows are YAML files under
-workflows/, and completed runs are JSON files under runs/.
-"""
+
 from __future__ import annotations
 
 import json
